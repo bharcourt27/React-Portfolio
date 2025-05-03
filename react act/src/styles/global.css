@@ -1,0 +1,272 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2c3e50;   /* Dark blue (Navbar & Footer) */
+    --secondary-color: #3498db; /* Vibrant blue (Accent color) */
+    --background-color: #e3eaf2; /* Soft blue-gray (Background) */
+    --text-color: #333;
+    --white: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Ensure full height layout without affecting content */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Root container ensures the footer stays at the bottom */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content area grows to push footer down */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+/* 🏠 NAVBAR - Doubled Size */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px; /* **Doubled padding** */
+    height: 140px; /* **Doubled height from 70px to 140px** */
+    box-shadow: 0px 4px 6px var(--shadow-color);
+    z-index: 1000;
+}
+
+/* 🏠 NAVBAR TITLE */
+nav h1 {
+    color: var(--white);
+    font-size: 48px; /* **Doubled font size from 24px to 48px** */
+}
+
+/* 🏠 NAV LINKS */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* **Increased spacing between links** */
+}
+
+/* 🏠 NAV LINK TEXT */
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 32px; /* **Doubled font size from 16px to 32px** */
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🏠 NAV LINK HOVER */
+nav ul li a:hover, 
+nav ul li .active {
+    color: var(--secondary-color);
+}
+
+/* 🏠 GENERAL PAGE SECTIONS - Ensure Space Below Navbar */
+section {
+    padding-top: 180px; /* **Ensures all pages are pushed below navbar** */
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🏠 ABOUT ME PAGE */
+#about {
+    text-align: center;
+}
+
+/* 📞 CONTACT PAGE */
+#contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 📄 RESUME SECTION - Align to Left */
+#resume {
+    width: 100%;
+    max-width: 1200px; /* Keeps content readable */
+    margin-left: 0; /* Aligns everything to the left */
+    padding-top: 180px; /* Ensures proper spacing below navbar */
+    padding-left: 50px; /* Adds some spacing from the left edge */
+    padding-bottom: 50px;
+    text-align: left; /* Aligns text content to the left */
+}
+
+/* 📄 RESUME HEADER */
+#resume h2 {
+    text-align: left;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* 📄 LIST OF SKILLS */
+#resume ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resume ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* 📄 DOWNLOAD RESUME LINK */
+#resume a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
+
+/* 📞 CONTACT FORM - Full Expansion */
+form {
+    width: 100%;
+    max-width: 1000px; /* **Set a reasonable width (adjustable)** */
+    min-width: 600px; /* **Ensures it doesn't shrink too much** */
+    min-height: 450px;
+    margin: auto;
+    background: var(--white);
+    padding: 40px; /* Balanced padding */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Keep input fields and textarea sizes consistent */
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid var(--shadow-color);
+    border-radius: 5px;
+    font-size: 18px;
+    height: 50px;
+}
+
+/* Keep textarea taller */
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Ensure error messages don’t shrink the form */
+.error-message {
+    color: red;
+    font-size: 16px;
+    min-height: 20px;
+    display: block;
+    visibility: hidden;
+}
+
+/* Show error messages only when needed */
+.error-message.active {
+    visibility: visible;
+}
+
+/* Button Styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* 🔻 FOOTER FIX: Always at the Bottom */
+footer {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Footer Links */
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    form {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        max-width: 600px;
+    }
+
+    input, textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        max-width: 90%;
+    }
+}
